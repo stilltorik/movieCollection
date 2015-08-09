@@ -1,0 +1,13 @@
+target
+.classpath
+.settings
+node
+node_modules
+target-grunt
+bower_components
+/.project
+/lib/
+.idea
+vendor
+src/main/css/all.css
+src/main/js/all.min.js

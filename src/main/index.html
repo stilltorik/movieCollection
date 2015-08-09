@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="movieCollection">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <title>My movie collection</title>
+  <!-- css -->
+  <link href="all.css" rel="stylesheet">
+  <!-- vendor js -->
+  <script src="vendor.min.js"></script>
+  <script src="all.min.js"></script>
+</head>
+<body>
+  <div ng-controller="mainCtrl as MC">
+    <span id="message">Hello World</span>
+    <button ng-click="MC.changeMessage()">Change message</button>
+  </div>
+</body>
+</html> 
