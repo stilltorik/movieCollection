@@ -1,0 +1,10 @@
+<div class="container">
+  
+  <div class="post">
+    <div class="title" ng-click="applyFilter({title: this.title });" style="background-image: url(images/favicon.ico)">{{title}}</div>
+    <div class="description">{{shortDescription}}</div>
+    <div ng-click="applyFilter({category: this.category });" class="category">{{category}}</div>
+    <div ng-click="applyFilter({user: this.user });" class="user">{{user}}</div>
+  </div>
+  
+</div>

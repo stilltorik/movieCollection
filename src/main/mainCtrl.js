@@ -1,11 +1,11 @@
 
-
-angular.module('movieCollection', []).controller('mainCtrl', function() {
+window.app = angular.module('movieCollection', []);
+app.controller('mainCtrl', ['$scope', function($scope) {
     movie.init();
-    var MC = this;
-    MC.changeMessage = function() {
-        var messages = ['Hello World', 'Bonjour la Terre', 'Hallo Welt'];
-        document.getElementById('message').innerHTML = messages[Math.floor(Math.random() * messages.length)];
-    };
-});
+    $scope.displayMovies = true;
+
+    $scope.display = function(isDisplayMovies) {
+        $scope.displayMovies = isDisplayMovies;
+    }
+}]);
 

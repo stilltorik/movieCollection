@@ -1,2 +1,49 @@
 @import "src/main/css/variables.less";
 
+.header, .footer {
+  background-color: @mainColor;
+  width: 100%;
+  position: fixed;
+  padding: 2px 30px;
+  z-index: 1000;
+  color: ivory;
+
+}
+.header {
+  font-size: 25px;
+}
+.footer {
+  bottom: 0;
+}
+.hiddenHeader {
+  height: 34px;
+}
+.hiddenFooter {
+  height: 24px;
+}
+
+#menu {
+  display: inline-block;
+  width: ~"calc(15% + 30px)";
+  min-width: 230px;
+  .menuItems {
+    padding: 15px;
+    position: fixed;
+    width: 15%;
+    min-width: 200px;
+    top: 50px;
+    .menuItem {
+      padding: 2px 0 1px 15px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+}
+.content {
+  display: inline-block;
+  width: ~"calc(85% - 44px)";
+  max-width: ~"calc(100% - 244px)";
+}
+.content.hideSection {
+  display: none;
+}

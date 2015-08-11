@@ -27,7 +27,8 @@ module.exports = function(grunt) {
                 src: [
                     'src/main/init.js',
                     'src/main/mainCtrl.js',
-                    'src/main/js/frw/movie.frw.localStorage.js'
+                    'src/main/view/*.js',
+                    'src/main/js/frw/*.js'
                 ],
                 dest: 'src/main/js/all.min.js'
             }
@@ -66,7 +67,8 @@ module.exports = function(grunt) {
                         [
                             "src/main/css/common.less",
                             "src/main/css/variables.less",
-                            "src/main/homePage.less"
+                            "src/main/homePage.less",
+                            "src/main/view/*.less"
                         ]
                 }
             }
@@ -181,7 +183,8 @@ module.exports = function(grunt) {
             },
             HTML_MODULES: {
                 files: [
-                    'main/src/index.html'
+                    'main/src/index.html',
+                    'main/src/*.html'
                 ],
                 tasks: [
                     'copy'

@@ -11,9 +11,29 @@
   <script src="all.min.js"></script>
 </head>
 <body>
-  <div ng-controller="mainCtrl as MC">
-    <span id="message">Hello World</span>
-    <button ng-click="MC.changeMessage()">Change message</button>
+  <div ng-controller="mainCtrl">
+
+    <div class="header">
+      My movie collection
+    </div>
+    <div class="hiddenHeader"></div>
+
+    <div id="menu">
+      <div class="menuItems">
+        <div class="menuItem" ng-click="display(true)">My movies</div>
+        <div class="menuItem" ng-click="display(false)">Add a movie</div>
+      </div>
+
+    </div>
+    <div class="content" ng-class="{'hideSection': !displayMovies}" ng-controller="moviesInteractionCtrl" ng-include src="'view/moviesInteraction.html'"></div>
+
+    <div class="content" ng-class="{'hideSection': displayMovies}" ng-controller="addMovieCtrl" ng-include src="'view/addMovie.html'"></div>
+
+
+    <div class="hiddenFooter"></div>
+    <div class="footer">
+      Trademark 2015
+    </div>
   </div>
 </body>
 </html> 

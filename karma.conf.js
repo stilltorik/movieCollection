@@ -7,7 +7,7 @@ module.exports = function ( karma ) {
             'src/test/js/**/*.js'//,
             //'vendor/jquery/dist/jquery.min.js'
         ],
-        exclude: ['src/main/js/all.min.js', 'src/main/js/vendor.min.js', 'src/main/mainCtrl.js'],
+        exclude: ['src/main/js/all.min.js', 'src/main/js/vendor.min.js', 'src/main/mainCtrl.js', 'src/main/view/*.js'],
         frameworks: ['jasmine', 'sinon' ],
         plugins: [
             'karma-jasmine',
