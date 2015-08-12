@@ -8,15 +8,21 @@ The data is stored in the localStorage, so beware of storage size limitations.
  * General architecture
  * Menu
  * Create
- * Retrieve has hardcoded data.
+ * Display movies
+ * Update
+ * Delete
 
 ## To do:
- * Display movies
- * Update (almost ready)
- * Delete
  * CSS
+ * Internationalisation
  * Dev environment:
   * The watch is buggy
+ * When movie saved and modified, add message to user
+ * Documentation
+ * Bugs:
+  * 2 images with the same name will result in unexpected behaviour
+  * delete and create: view is not updated until refresh (cache of localStorage not updated properly?)
+  * form validation
 
 ## Notes
 * Unit tests:

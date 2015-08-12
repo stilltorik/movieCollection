@@ -1,11 +1,18 @@
 
 app.controller('moviesInteractionCtrl', ['$scope', function($scope) {
-    $scope.applyFilter = function(stuff) {
-        console.log(stuff);
+    $scope.movieList = movie.frw.localStorage.getAll();
+
+    $scope.modify = function(id) {
+        $scope.$parent.display(false);
+        $scope.$parent.$broadcast('movie.modify', id);
     };
-    $scope.title = 'asdf';
-    $scope.shortDescription = 'qwer';
-    $scope.category = 'fdfgh';
-    $scope.user = 'jwq';
+    $scope.delete = function(id) {
+        if (confirm('This will delete the movie permanently. Are you sure you want to proceed?')) {
+            movie.frw.localStorage.delete(id);
+            setTimeout(function() {
+                $scope.$apply();
+            }, 1);
+        }
+    };
 }]);
 

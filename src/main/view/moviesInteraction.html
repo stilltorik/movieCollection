@@ -1,10 +1,12 @@
 <div class="container">
   
-  <div class="post">
-    <div class="title" ng-click="applyFilter({title: this.title });" style="background-image: url(images/favicon.ico)">{{title}}</div>
-    <div class="description">{{shortDescription}}</div>
-    <div ng-click="applyFilter({category: this.category });" class="category">{{category}}</div>
-    <div ng-click="applyFilter({user: this.user });" class="user">{{user}}</div>
+  <div ng-repeat="movie in movieList" class="post">
+    <div class="title">{{movie.movieTitle}}</div>
+    <img class="image" ng-repeat="image in movie.images" src="data:image/png;base64,{{image.data}}" title="{{image.name}}"/>
+    <div class="description">{{movie.description}}</div>
+    <div ng-if="movie.genre" class="category">{{movie.genre}}</div>
+    <div class="interaction" ng-click="modify(movie.id)">Modify</div>
+    <div class="interaction" ng-click="delete(movie.id)">Delete</div>
   </div>
   
 </div>

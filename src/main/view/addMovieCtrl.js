@@ -8,7 +8,8 @@ app.controller('addMovieCtrl', ['$scope', function($scope) {
       }
     };
     $scope.addMovie = function(formData) {
-        $scope.formData = movie.frw.localStorage.set(formData);
+        movie.frw.localStorage.set(formData);
+        $scope.reset();
     };
     $scope.reset = function() {
         $scope.formData = {
@@ -27,7 +28,6 @@ app.controller('addMovieCtrl', ['$scope', function($scope) {
                 return;
             }
         }
-        console.log('no image removed');
     };
     $scope.uploadImage = function(files) {
         var image = document.getElementById('imageContainer');
@@ -48,6 +48,10 @@ app.controller('addMovieCtrl', ['$scope', function($scope) {
         }
     };
     $scope.init();
+
+    $scope.$on('movie.modify', function(event, id) {
+        $scope.init(id);
+    });
 
 }]);
 

@@ -4,7 +4,7 @@
   <input type="text" ng-model="formData.description" placeholder="Movie description" required=""/><br />
   <input type="radio" ng-model="formData.genre" value="romance" />Romance
   <input type="radio" ng-model="formData.genre" value="thriller" />Thriller
-  <input type="radio" ng-model="formData.genre" value="scifi" />Sci-fi<br />
+  <input type="radio" ng-model="formData.genre" value="Sci-fi" />Sci-fi<br />
   <div class="image" ng-repeat="image in formData.images">{{image.name}}
     <img class="thumbnail" src="data:image/png;base64,{{image.data}}"/>
     <span class="removeButton" ng-click="removeImage(image.name)">x</span>
