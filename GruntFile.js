@@ -26,6 +26,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'src/main/init.js',
+                    'src/main/js/i18n-en.js',
                     'src/main/mainCtrl.js',
                     'src/main/view/*.js',
                     'src/main/js/frw/*.js'

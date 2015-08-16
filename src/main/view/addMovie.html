@@ -1,18 +1,25 @@
 <form name="addMovieForm" novalidate class="addMovieForm">
-  <input type="text" ng-model="formData.movieTitle" name="movieName" placeholder="Movie title" required=""/><br />
+  <input type="text" ng-model="formData.movieTitle" name="movieName" placeholder="{{i18n.title}}" required=""/><br />
+  <div class="errorMessage" ng-if="errors.title">{{errors.title}}</div>
 
-  <input type="text" ng-model="formData.description" placeholder="Movie description" required=""/><br />
-  <input type="radio" ng-model="formData.genre" value="romance" />Romance
-  <input type="radio" ng-model="formData.genre" value="thriller" />Thriller
-  <input type="radio" ng-model="formData.genre" value="Sci-fi" />Sci-fi<br />
-  <div class="image" ng-repeat="image in formData.images">{{image.name}}
-    <img class="thumbnail" src="data:image/png;base64,{{image.data}}"/>
+  <input type="text" ng-model="formData.description" placeholder="{{i18n.description}}" required=""/><br />
+  <div class="errorMessage" ng-if="errors.description">{{errors.description}}</div>
+  <label><input type="radio" ng-model="formData.genre" value="{{i18n.romance}}" />{{i18n.romance}}</label>
+  <label><input type="radio" ng-model="formData.genre" value="{{i18n.thriller}}"/>{{i18n.thriller}}</label>
+  <label><input type="radio" ng-model="formData.genre" value="{{i18n.scifi}}" />{{i18n.scifi}}</label><br />
+  <div class="errorMessage" ng-if="errors.genre">{{errors.genre}}</div>
+
+  <div class="image" ng-repeat="image in formData.images">
+    <img class="thumbnail" src="data:image/png;base64,{{image.data}}" title="{{image.name}}"/>
     <span class="removeButton" ng-click="removeImage(image.name)">x</span>
   </div>
+  <br/>
+  <input class="addFile" type="file" ng-model="formData.test" onchange="angular.element(this).scope().uploadImage(this.files)"/>
+  <div class="errorMessage" ng-if="errors.image">{{errors.image}}</div>
 
-  <input type='file' ng-model="formData.test" onchange="angular.element(this).scope().uploadImage(this.files)"/>
-
-  <input type="button" ng-click="reset()" value="Reset" />
-  <input type="submit" ng-click="addMovie(formData)" value="Save" />
+  <br/><br />
+  <input class="button" type="button" ng-click="reset()" value="{{i18n.reset}}" />
+  <input class="button" type="submit" ng-click="addMovie(formData)" value="{{i18n.save}}" />
 </form>
+<div ng-if="successfulSave" class="successMessage">{{i18n.saveSuccessful}}</div>
 <img id="imageContainer" style="display: none"/>

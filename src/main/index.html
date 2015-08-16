@@ -3,37 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-  <title>My movie collection</title>
-  <!-- css -->
+  <title>{{i18n.pageTitle}}</title>
   <link href="all.css" rel="stylesheet">
-  <!-- vendor js -->
   <script src="vendor.min.js"></script>
   <script src="all.min.js"></script>
 </head>
 <body>
   <div ng-controller="mainCtrl">
 
-    <div class="header">
-      My movie collection
-    </div>
+    <div class="header">{{i18n.mainHeader}}</div>
     <div class="hiddenHeader"></div>
 
     <div id="menu">
       <div class="menuItems">
-        <div class="menuItem" ng-click="display(true)">My movies</div>
-        <div class="menuItem" ng-click="display(false)">Add a movie</div>
+        <div class="menuItem" ng-click="displayMovies()">{{i18n.displayMovies}}</div>
+        <div class="menuItem" ng-click="addMovie()">{{i18n.addMovie}}</div>
       </div>
 
     </div>
-    <div class="content" ng-class="{'hideSection': !displayMovies}" ng-controller="moviesInteractionCtrl" ng-include src="'view/moviesInteraction.html'"></div>
+    <div class="content" ng-class="{'hideSection': !isDisplayMovies}" ng-controller="moviesInteractionCtrl" ng-include src="'view/moviesInteraction.html'"></div>
 
-    <div class="content" ng-class="{'hideSection': displayMovies}" ng-controller="addMovieCtrl" ng-include src="'view/addMovie.html'"></div>
+    <div class="content" ng-class="{'hideSection': isDisplayMovies}" ng-controller="addMovieCtrl" ng-include src="'view/addMovie.html'"></div>
 
 
     <div class="hiddenFooter"></div>
-    <div class="footer">
-      Trademark 2015
-    </div>
+    <div class="footer">{{i18n.footer}}</div>
   </div>
 </body>
 </html> 

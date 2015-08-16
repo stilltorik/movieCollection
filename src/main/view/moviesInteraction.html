@@ -5,8 +5,9 @@
     <img class="image" ng-repeat="image in movie.images" src="data:image/png;base64,{{image.data}}" title="{{image.name}}"/>
     <div class="description">{{movie.description}}</div>
     <div ng-if="movie.genre" class="category">{{movie.genre}}</div>
-    <div class="interaction" ng-click="modify(movie.id)">Modify</div>
-    <div class="interaction" ng-click="delete(movie.id)">Delete</div>
+    <div class="interaction" ng-click="modify(movie.id)">{{i18n.modify}}</div>
+    <div class="interaction" ng-click="delete(movie.id)">{{i18n.delMovie}}</div>
   </div>
+  <div ng-if="movieList.length === 0">{{i18n.noMovie}}</div>
   
 </div>

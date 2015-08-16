@@ -10,6 +10,7 @@ movie.frw.localStorage = {};
   };
 
   var cache = initialiseCache();
+  truc = cache;
   var IdCounter = 0;
 
   var generateId = function() {
@@ -19,6 +20,11 @@ movie.frw.localStorage = {};
     return IdCounter++;
   };
 
+  /**
+   * Store movie data in the local storage. If the movie does not yet have an id (new movie), an id is provided to it
+   * @param data - movie data
+   * @returns {*} - the movie data, with an id (if the movie did not have one, one is provided).
+   */
   movie.frw.localStorage.set = function(data) {
     if (data.id === undefined) {
       data.id = generateId();
@@ -28,6 +34,10 @@ movie.frw.localStorage = {};
     return data;
   };
 
+  /**
+   * Returns an array containing all the movies.
+   * @returns {Array} - the list of movies
+   */
   movie.frw.localStorage.getAll = function() {
     var result = [];
     for (var id in cache) {
@@ -36,15 +46,27 @@ movie.frw.localStorage = {};
     return result;
   };
 
+  /**
+   * Returns the movie with the provided id.
+   * @param id - the id of the movie requested.
+   * @returns {*} - the movie with the provided id.
+   */
   movie.frw.localStorage.get = function(id) {
     return cache[id];
   };
 
+  /**
+   * Deletes the movie with the provided id
+   * @param id - id of the movie to delete
+   */
   movie.frw.localStorage.delete = function(id) {
     delete cache[id];
     localStorage.removeItem(id);
   };
 
+  /**
+   * Deletes all the movies data.
+   */
   movie.frw.localStorage.reset = function() {
     localStorage.clear();
     cache = {};

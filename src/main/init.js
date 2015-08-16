@@ -5,6 +5,7 @@ window.movie = {
 };
 
 movie.init = function() {
+    // Nothing needed for now
     return 1;
 };
 

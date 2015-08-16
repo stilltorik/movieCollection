@@ -1,11 +1,38 @@
 .addMovieForm {
+  margin-top: 10px;
+  input {
+    padding: 3px;
+    margin: 5px 2px 5px 0;
+  }
+  .button {
+    padding: 16px;
+    border-radius: 11px;
+    border: none;
+  }
+  label {
+    cursor: pointer;
+  }
   .image {
+    display: inline;
+    margin-right: 5px;
     .thumbnail {
-      height: auto;
-      max-width: 50px;
+      margin-top: 9px;
+      max-height: 200px;
+      width: auto;
+      vertical-align: top;
     }
     .removeButton {
       cursor: pointer;
+      position: absolute;
+      margin-left: -24px;
+      margin-top: 9px;
+      padding: 2px 5px 3px 6px;
+      background-color: white;
+      opacity: 0.7;
+      font-size: 18px;
     }
+  }
+  .addFile {
+    padding: 5px;
   }
 }
