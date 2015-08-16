@@ -10,7 +10,6 @@ movie.frw.localStorage = {};
   };
 
   var cache = initialiseCache();
-  truc = cache;
   var IdCounter = 0;
 
   var generateId = function() {
@@ -41,7 +40,9 @@ movie.frw.localStorage = {};
   movie.frw.localStorage.getAll = function() {
     var result = [];
     for (var id in cache) {
-      result.push(cache[id]);
+      if (cache[id]) {
+        result.push(cache[id]);
+      }
     }
     return result;
   };
